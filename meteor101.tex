@@ -9,7 +9,7 @@
 \setbeamertemplate{items}[ball]
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamertemplate{navigation symbols}{}
-\usetheme{CambridgeUS}
+\usetheme{default}
 
 \title[Meteor 101]{Meteor \.{I}le Uygulama Geli\c{s}tirme}
 \author{Zekeriya Ko\c{c}}
@@ -34,12 +34,55 @@
 
     \begin{frame}{Meteor: 7 Prensip}
         \begin{enumerate}
-            \item Data iletimi. Render işlemi istemcinin işi.
-            \item Tek dil. Hem sunucu hem istemci kodu tamamen Javascript.
+            \item Data iletimi. Sunucu-istemci arasında HTML değil veri gidiyor. Veriyi Render işlemi istemcinin işi.
+            \item Tek dil. Hem sunucu hem istemci kodu Javascript.
+            \item Veritabanı heryerde. Sunucu ve istemci taraflarında aynı arayüz.
+            \item Latency Compensation. İstemciye veri önyüklemesi ve istemcide model simulasyonu.
+            \item Öntanımlı tepkisellik. Öntanımlı davranış şekli tepkisel. 
+            \item Topluluğu kucakla. Mevcut açık kaynak projeler ile entegre.
+            \item Basitlik === Verimlilik.
         \end{enumerate}
     \end{frame}
 
     \begin{frame}{Meteor: Proje Yap{\i}s{\i}}
+        \begin{itemize}
+            \item Oldukça esnek, serbest.
+            \item Sunucu
+                \begin{itemize}
+                    \item Node.JS 
+                    \item Fiber --- Istek başına bir thread.
+                    \item client, public, private klasörleri hariç hepsini NodeJS yükler.
+                    \item private --- Assets API
+                \end{itemize}
+            \item İstemci
+                \begin{itemize}
+                    \item Browser
+                    \item server, public, private klasörleri hariç tüm JS dosyalar.
+                    \item Birleştirilip gönderiliyor.
+                    \item Ister tek bir JS dosyası, ister klasör klasör altına. Serbest.
+                \end{itemize}
+            \item Ortak
+                \begin{itemize}
+                    \item client, server, test klasörleri hariç her şey hem sunucuda hem istemcide.
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Meteor: Proje Yapısı (2)}
+        \begin{itemize}
+            \item HTML
+                \begin{itemize}
+                    \item head, body, template
+                    \item head, body birleştilir.
+                    \item template etiketleri ise JS fonksiyonlarına çevrilir.
+                \end{itemize}
+            \item Yükleme sırası önemli
+                \begin{itemize}
+                    \item önce /lib klasörü
+                    \item en son main.* 
+                    \item çeşitli kurallar, kaideler vs.
+                \end{itemize}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}{Meteor: Veri ve G\"uvenlik}
