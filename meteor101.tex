@@ -38,7 +38,7 @@
             \item Tek dil. Hem sunucu hem istemci kodu Javascript.
             \item Veritabanı heryerde. Sunucu ve istemci taraflarında aynı arayüz.
             \item Latency Compensation. İstemciye veri önyüklemesi ve istemcide model simulasyonu.
-            \item Öntanımlı tepkisellik. Öntanımlı davranış şekli tepkisel. 
+            \item Öntanımlı tepkisellik. Öntanımlı davranış şekli tepkisel.
             \item Topluluğu kucakla. Mevcut açık kaynak projeler ile entegre.
             \item Basitlik === Verimlilik.
         \end{enumerate}
@@ -49,7 +49,7 @@
             \item Oldukça esnek, serbest.
             \item Sunucu
                 \begin{itemize}
-                    \item Node.JS 
+                    \item Node.JS
                     \item Fiber --- Istek başına bir thread.
                     \item client, public, private klasörleri hariç hepsini NodeJS yükler.
                     \item private --- Assets API
@@ -79,16 +79,32 @@
             \item Yükleme sırası önemli
                 \begin{itemize}
                     \item önce /lib klasörü
-                    \item en son main.* 
+                    \item en son main.*
                     \item çeşitli kurallar, kaideler vs.
                 \end{itemize}
         \end{itemize}
     \end{frame}
 
     \begin{frame}{Meteor: Veri ve G\"uvenlik}
+        \begin{itemize}
+            \item MongoDB --- MiniMongo
+            \item Collections
+            \item Publish --- Subscribe
+            \item Latency compensation
+            \item Methods
+        \end{itemize}
     \end{frame}
 
     \begin{frame}{Meteor: Tepkisellik (?) --- Reactivity}
+        \begin{itemize}
+            \item Bağımlılık takibi.
+            \item Tepkisel veri kaynakları;
+                \begin{itemize}
+                    \item Session
+                    \item Veritabanı sorguları
+                    \item vs.
+                \end{itemize}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}{Meteor: Canl{\i} HTML}
